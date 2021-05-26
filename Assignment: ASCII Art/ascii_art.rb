@@ -1,5 +1,5 @@
 # Part 1 - Write a Ruby program that prompts a person to enter a number, and then outputs a triangle of asterisks of that height and length.
-=begin
+
 print "Enter a number: "
 input = gets.to_i
 i = 0
@@ -44,7 +44,7 @@ while i < input
 
   puts output
 end
-=end
+
 # Optional: Part 3 - Update your program so that it draws a triangle of asterisks that is centered.
 
 print "Enter a number: "
@@ -69,6 +69,40 @@ while i < input
     output += "* "
     k += 1
   end
+
+  puts output
+end
+
+# Optional: Part 4 - Update your program so that it draws a diamond of asterisks that is centered,
+#                    with a maximum width of the entered number.
+
+print "Enter a number: "
+input = gets.to_i
+i = 0
+
+while i < (input + input - 1)
+  i += 1
+  output = " "
+
+  j = 0
+  k = 0
+  
+
+  # print spaces
+  while (j < input - i && i < input) || (i >= input && (i - input) > j)
+    output += " "
+    j += 1
+  end
+
+  # print asterisks
+  while (k < i && i < input) || (i >= input && input - (i % input) >  k)
+    output += "* "
+    k += 1
+  end
+
+  # Now let's go in reverse
+
+  # print spaces
 
   puts output
 end
