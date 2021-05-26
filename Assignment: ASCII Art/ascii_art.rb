@@ -100,9 +100,5 @@ while i < (input + input - 1)
     k += 1
   end
 
-  # Now let's go in reverse
-
-  # print spaces
-
   puts output
 end
