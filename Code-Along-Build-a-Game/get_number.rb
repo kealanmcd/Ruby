@@ -16,9 +16,6 @@ target = rand(100) + 1
 # Track how many guesses the player has made.
 num_guesses = 0
 
-# Track how many guesses the player has made.
-num_guesses = 0
-
 # Track whether the player has guessed correctly.
 guessed_it = false
 
@@ -26,10 +23,10 @@ until num_guesses == 10 || guessed_it
   puts "you've got #{10 - num_guesses} guesses left."
   print "Make a guess: "
   guess = gets.to_i
-  num_guesses +=1
+  num_guesses += 1
   
   # Compare the guess to the target.
-  # Print the approopriate message.
+  # Print the appropriate message.
   if guess < target
     puts "Ooops. Your guess was LOW."
   elsif guess > target
@@ -42,7 +39,7 @@ until num_guesses == 10 || guessed_it
 
 end
 
-# If the player didn't guess in time, show the rarget number.
+# If the player didn't guess in time, show the target number.
 unless guessed_it
   puts "Sorry. You didn't get my number. (It was #{target}.)"
 end
