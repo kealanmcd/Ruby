@@ -13,7 +13,18 @@ Happy birthday dear #{name}
 Happy birthday to you."
 
 puts happy_birthday_song
-puts " "
+
+
+# Same code put into a method
+print "What is your name? "
+name = gets.chomp
+
+def sing_happy_birthday(name)
+  happy_birthday_song = "Happy birthday to you\nHappy birthday to you\nHappy birthday dear #{name}\nHappy birthday to you."
+  puts happy_birthday_song
+end
+
+sing_happy_birthday(name)
 
 # Part 2 - Update your program to only contain the string “Happy birthday” once by using a 
 #          while loop and an if statement.
@@ -33,7 +44,26 @@ while i < 4
   i += 1
 end
 
-puts " "
+
+# Same code put into a method
+print "What is your name? "
+name = gets.chomp
+
+def sing_happy_birthday(name)
+  i = 0
+  while i < 4
+    print "Happy birthday"
+    if i == 2
+      print " dear #{name}\n"
+    else
+      print " to you\n"
+    end
+  
+    i += 1
+  end
+end
+
+sing_happy_birthday(name)
 
 # Part 3 - Update your program to only contain the string “Happy birthday” 
 #          once by using an until loop and a case statement and without using the print method.
@@ -57,3 +87,30 @@ until i >= 4
 end
 
 puts output
+
+
+# Same code put into a method
+print "What is your name? "
+name = gets.chomp
+
+def sing_happy_birthday(name)
+  i = 0
+  output = ""
+
+  until i >= 4
+    output += "Happy birthday"
+
+    case i
+    when 2
+      output += " dear #{name} \n"
+    else
+      output += " to you\n"
+    end
+
+    i += 1
+  end
+
+  output  # we can also write "return output" here. Ruby will default to returning the last line
+end
+
+puts sing_happy_birthday(name)
