@@ -1,4 +1,4 @@
-# Part 2
+# Part 3
 def verse(number)
 
   bottle_count = number > 0 ? number : "No more"
@@ -24,4 +24,15 @@ def verse(number)
   verse(number -1) if number > 0
 end
 
-verse(10)
+input = ""
+input_int = input.to_i
+input_converted_to_string = "0"
+
+while input_converted_to_string != input || input_int < 0
+  print "How many bottles are on the wall? "
+  input = gets.chomp
+  input_int = input.to_i
+  input_converted_to_string = input.to_i.to_s
+end
+
+verse(input_int)
