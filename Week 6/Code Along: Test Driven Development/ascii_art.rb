@@ -1,124 +1,68 @@
-# Part 1 - Write a Ruby program that prompts a person to enter a number, and then outputs a triangle of asterisks of that height and length.
+class AsciiArt
 
-print "Enter a number: "
-input = gets.to_i
+  def draw(number)
+    raise "Value can't be a minus or non integer" if !number.is_a? Integer || number < 0
 
-def print_triangle(input)
-  i = 0
-
-  while i < input
-    i += 1
     output = ""
-    j = 0
-    while j < i
-      output += "*"
-
-      j += 1
+    i = 1
+    while i <= number
+      output += "*" * i + "\n"
+      i += 1
     end
-
-    puts output
+    output
   end
-end
 
-print_triangle(input)
+  # Part 2: Right aligned triangle
+  def draw_right_aligned(number)
+    raise "Value can't be a minus or non integer" if !number.is_a? Integer || number < 0
 
-# Part 2 - Update your program so that it outputs a triangle of asterisks that is aligned on the right side.
-
-print "Enter a number: "
-input = gets.to_i
-
-def print_reversed_triangle(input)
-  i = 0
-
-  while i < input
-    i += 1
     output = ""
-
-    j = 0
-    k = 0
-    
-    # print spaces
-    while j < input - i
-      output += " "
-      j += 1
+    i = 1
+    while i <= number
+      output += " " * (number - i)
+      output += "*" * i + "\n"
+      i += 1
     end
 
-    # print asterisks
-    while k < i
-      output += "*"
-      k += 1
-    end
-
-    puts output
+    output
   end
-end
 
-print_reversed_triangle(input)
+  # Part 3: Equilateral triangle
+  def draw_equilateral_triangle(number)
+    raise "Value can't be a minus or non integer" if !number.is_a? Integer || number < 0
 
-# Optional: Part 3 - Update your program so that it draws a triangle of asterisks that is centered.
-
-print "Enter a number: "
-input = gets.to_i
-
-def print_equilateral_triangle(input)
-  i = 0
-
-  while i < input
-    i += 1
-    output = " "
-
-    j = 0
-    k = 0
-
-    # print spaces
-    while j < input - i
-      output += " "
-      j += 1
+    output = ""
+    i = 1
+    while i <= number
+      output += " " * (number - i)
+      output += "* " * i + "\n"
+      i += 1
     end
 
-    # print asterisks
-    while k < i
-      output += "* "
-      k += 1
-    end
-
-    puts output
+    output
   end
-end
 
-print_equilateral_triangle(input)
+  # Part 4: Diamond
+  def draw_diamond(number)
+    raise "Value can't be a minus or non integer" if !number.is_a? Integer || number < 0
 
-# Optional: Part 4 - Update your program so that it draws a diamond of asterisks that is centered,
-#                    with a maximum width of the entered number.
+    output = ""
+    i = 1
 
-print "Enter a number: "
-input = gets.to_i
+    while i <= number * 2
 
-def print_diamond(input)
-  i = 0
-
-  while i < (input + input - 1)
-    i += 1
-    output = " "
-
-    j = 0
-    k = 0
-    
-
-    # print spaces
-    while (j < input - i && i < input) || (i >= input && (i - input) > j)
-      output += " "
-      j += 1
+      if i < number
+        output += " " * (number - i)
+        output += "* " * i
+      else
+        output += " " * (i % number) 
+        output += "* " * (number * 2 - i)
+      end
+      output += "\n"
+      i += 1
     end
 
-    # print asterisks
-    while (k < i && i < input) || (i >= input && input - (i % input) >  k)
-      output += "* "
-      k += 1
-    end
-
-    puts output
+    output
   end
+  
 end
-
-# print_diamond(input)
