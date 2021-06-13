@@ -2,7 +2,7 @@ class Student
 
   def initialize(name)
     @name = name
-    @study_subjects = {
+    @study_bjects = {
       math: 80,
       english: 70,
       irish: 60,
