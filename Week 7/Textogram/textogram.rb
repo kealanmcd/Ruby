@@ -41,6 +41,7 @@ class Histogram
             extracted_word = ""
           end
         end
+        
       end
     else    
 
