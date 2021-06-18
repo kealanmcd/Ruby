@@ -13,14 +13,18 @@ module Accessorizable
   end
 
   def accessories_to_s  # will return a nicely formatted sentence fragment describing the accessories an object might have
-    puts "Is holding the accessories:"
-    output = ""
-    @accessories.each_with_index do |accessory, index|
-      output += "#{accessory}" 
-      output += ", " if @accessories.size > 1 && index < @accessories.size - 2
-      output += " and " if @accessories.length > 1 && index == @accessories.size - 2
+    if @accessories.size > 0
+      puts "Has the accessories:"
+      output = ""
+      @accessories.each_with_index do |accessory, index|
+        output += "#{accessory}" 
+        output += ", " if @accessories.size > 1 && index < @accessories.size - 2
+        output += " and " if @accessories.length > 1 && index == @accessories.size - 2
+      end
+      puts output      
+    else
+      puts "Does not currently have any accessories."
     end
-    puts output
 
   end
 

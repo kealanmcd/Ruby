@@ -34,7 +34,7 @@ class Jean < Clothing
   def initialize(color, size, material, length)
     super color, size, material
     @length = length
-    create_accessories
+    accessories
   end
 
   def to_s
@@ -60,6 +60,7 @@ class SmartPhone < Computer
 
   def initialize(processor, ram, operating_system)
     super processor, ram, operating_system
+    accessories
   end
 
   def to_s
