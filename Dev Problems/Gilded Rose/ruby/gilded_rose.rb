@@ -101,21 +101,21 @@ class RegularPerishable
   end
 end
 
-class Brie
+class Brie < RegularPerishable
   def initialize(item)
     super(item)
     @degrade_rate = degradation_rate * -1
   end
 end
 
-class Conjure
+class Conjure < RegularPerishable
   def initialize(item)
     super(item)
     @degrade_rate = degradation_rate * 2
   end
 end
 
-class Sulfuras
+class Sulfuras < RegularPerishable
   def initialize(item)
     super(item)
   end
@@ -125,7 +125,7 @@ class Sulfuras
   end
 end
 
-class BackstagePass
+class BackstagePass < RegularPerishable
   def initialize(item)
     super(item)
     @degrade_rate = degradation_rate
